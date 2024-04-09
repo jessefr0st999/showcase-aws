@@ -27,11 +27,7 @@ if (cluster.isMaster) {
     const express = require('express');
     const bodyParser = require('body-parser');
 
-    AWS.config.region = process.env.REGION
-    AWS.config.update({
-        accessKeyId: 'xxxx',
-        secretAccessKey: 'xxxx',
-    });
+    AWS.config.region = process.env.REGION;
 
     const sns = new AWS.SNS();
     const ddb = new AWS.DynamoDB();
