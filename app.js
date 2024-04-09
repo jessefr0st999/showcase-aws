@@ -28,6 +28,8 @@ if (cluster.isMaster) {
     const bodyParser = require('body-parser');
 
     AWS.config.region = process.env.REGION;
+    AWS.config.accessKeyId = process.env.AWS_ACCESS_ID;
+    AWS.config.secretAccessKey = process.env.AWS_SECRET_KEY;
 
     const sns = new AWS.SNS();
     const ddb = new AWS.DynamoDB();
